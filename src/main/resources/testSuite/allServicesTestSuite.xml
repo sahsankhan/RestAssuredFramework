@@ -1,0 +1,48 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Rest Assured Framework">
+    <test name="Rest Assured Framework" group-by-instances="true">
+        <classes>
+            <class name="Testcases.Authentication"/>
+
+            <class name="Testcases.OrdersManagement">
+                <methods>
+                    <include name="Authorization"/>
+                    <include name="fetchArchiveOrders"/>
+                    <include name="fetchActiveOrders"/>
+                    <include name="FetchServiceableZipcodes"/>
+                    <include name="getDeliverySlots"/>
+                    <include name="RescheduleDelivery"/>
+                    <include name="CancelDelivery"/>
+                    <include name="VerifyCancelledDelivery"/>
+                </methods>
+            </class>
+
+            <class name="Testcases.EditLocation">
+                <methods>
+                    <include name="getAllLocations"/>
+                    <include name="getSingleLocation"/>
+                    <include name="addZipCodeInLocation"/>
+                    <include name="verifyAddedZipcode"/>
+                    <include name="addInvalidZipCodeInLocation"/>
+                </methods>
+            </class>
+
+            <class name="Testcases.DeliveryLocationSettings">
+                <methods>
+                    <include name="preReqForDeliverySlots"/>
+                    <include name="addDeliverySlotForWeek"/>
+                    <include name="addDeliveryForSingeDay"/>
+                    <include name="addAlreadyAddedDeliverySlot"/>
+                    <include name="deleteDeliverySlot"/>
+                    <include name="addBlackoutDate"/>
+                    <include name="deleteBlackoutDate"/>
+                    <include name="updateDeliverySurcharge"/>
+                    <include name="updateFutureDateRange"/>
+                    <include name="getSingleLocation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
